@@ -1,3 +1,1 @@
-# go-explorationtest
-test
-tet
+# go-exploration
