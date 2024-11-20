@@ -1,11 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type UserPii struct {
-	year   int
-	salary int
-	hobby  string
+	year   int    `csv:"year"`
+	salary int    `csv:"salary"`
+	hobby  string `csv:"hobby"`
 }
 
 func printHobby(year int) {
@@ -26,11 +28,11 @@ var xyz = []UserPii{
 
 func main() {
 	up1 := UserPii{2021, 1000, "Basket ball"}
-	println(up1.salary)
+	fmt.Printf("%v\n", up1)
 	up2 := UserPii{2022, 2000, "Cricket"}
-	println(up2.hobby)
-
-	fmt.Printf("%v\n", xyz)
+	fmt.Printf("%v\n", up2)
 
 	printHobby(2024)
+
+	fmt.Printf("xyz = %v\n", xyz)
 }
