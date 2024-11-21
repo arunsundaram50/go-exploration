@@ -5,25 +5,25 @@ import (
 )
 
 type UserPii struct {
-	year   int    `csv:"year"`
-	salary int    `csv:"salary"`
-	hobby  string `csv:"hobby"`
+	year   int
+	salary int
+	hobby  string
 }
 
-func printHobby(year int) {
-	for _, up := range xyz {
-		if up.year == year {
-			println(up.hobby)
-		}
-	}
-}
-
-var xyz = []UserPii{
+var userPiiList = []UserPii{
 	{2021, 1000, "Basket ball"},
 	{2022, 2000, "Cricket"},
 	{2023, 3000, "Cricket"},
 	{2024, 4000, "Soccer"},
 	{2025, 5000, "Volleyball"},
+}
+
+func printHobby(year int) {
+	for _, userPii := range userPiiList {
+		if userPii.year == year {
+			println(userPii.hobby)
+		}
+	}
 }
 
 func main() {
@@ -34,5 +34,5 @@ func main() {
 
 	printHobby(2024)
 
-	fmt.Printf("xyz = %v\n", xyz)
+	fmt.Printf("xyz = %v\n", userPiiList)
 }

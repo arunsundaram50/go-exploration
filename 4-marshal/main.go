@@ -2,29 +2,32 @@ package main
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/jszwec/csvutil"
 )
 
-type UserPii struct {
-	Year   int    `csv:"year"`
-	Salary int    `csv:"salary"`
-	Hobby  string `csv:"hobby"`
+type KitchenItem struct {
+	Name           string
+	Material       string
+	WeightInLbs    float32
+	Color          string
+	HeightInInches float32
 }
 
-var xyz = []UserPii{
-	{2021, 1000, "Basket ball"},
-	{2022, 2000, "Cricket"},
-	{2023, 3000, "Cricket"},
-	{2024, 4000, "Soccer"},
-	{2025, 5000, "Volleyball"},
+var kitchenItems = []KitchenItem{
+	{"spoon#1", "silver", .3, "silver", 10},
+	{"spoon#2", "plastic", .1, "white", 5},
+	{"fork#1", "plastic", .1, "white", 5},
 }
 
 func main() {
-	data, err := csvutil.Marshal(xyz)
+	csvBytes, err := csvutil.Marshal(kitchenItems)
 	if err != nil {
-		fmt.Println(err)
+		fmt.Printf("error %v\n", err)
+	} else {
+		fmt.Printf("CSV = %s\n", string(csvBytes))
 	}
-
-	fmt.Printf("CSV = %s\n", string(data))
+	// prefix: 0o - oct, 0b -bin, 0x -hex, dec (32+128+256)
+	os.WriteFile("myfile.csv", csvBytes, 0o644)
 }
