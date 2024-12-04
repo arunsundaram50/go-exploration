@@ -5,4 +5,5 @@ use (
 	./3-struct
 	./4-marshal
 	./5-unmarshal
+	./6-pointer/2-string
 )

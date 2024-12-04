@@ -1,0 +1,11 @@
+item_name,is_needed,added_date,quantity
+Milk,Yes,2024-12-04,2
+Bread,No,2024-12-02,1
+Eggs,Yes,2024-12-03,12
+Butter,Yes,2024-12-04,1
+Apples,No,2024-11-30,6
+Chicken,Yes,2024-12-01,3
+Rice,Yes,2024-11-29,5
+Cheese,No,2024-11-28,1
+Tomatoes,Yes,2024-12-04,4
+Potatoes,No,2024-12-01,10
