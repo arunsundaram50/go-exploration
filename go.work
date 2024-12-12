@@ -1,9 +1,5 @@
 go 1.21.0
 
 use (
-	./2b-error
 	./3-struct
-	./4-marshal
-	./5-unmarshal
-	./6-pointer/2-string
 )
