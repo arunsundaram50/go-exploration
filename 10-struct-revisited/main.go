@@ -1,0 +1,5 @@
+package structexamples
+
+func main() {
+
+}
