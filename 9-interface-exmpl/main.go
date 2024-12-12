@@ -1,0 +1,5 @@
+package interfaceexmpl
+
+func main() {
+
+}

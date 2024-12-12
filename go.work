@@ -2,4 +2,5 @@ go 1.21.0
 
 use (
 	./3-struct
+	./9-interface-exmpl
 )
