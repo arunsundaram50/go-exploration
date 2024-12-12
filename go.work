@@ -1,6 +1,6 @@
 go 1.21.0
 
 use (
-	./3-struct
-	./9-interface-exmpl
+	./12-webapp
+	./9a-testing
 )
