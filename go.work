@@ -3,4 +3,5 @@ go 1.21.0
 use (
 	./12-webapp
 	./9a-testing
+	./9b-func-first-class
 )
