@@ -1,6 +1,7 @@
 go 1.21.0
 
 use (
+	./11-interfaces
 	./12-webapp
 	./9a-testing
 	./9b-func-first-class

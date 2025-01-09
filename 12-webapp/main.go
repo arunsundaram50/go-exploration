@@ -1,47 +1,24 @@
 package main
 
 import (
-	"strconv"
-
-	"github.com/gofiber/fiber/v2"
+	"net/http"
 )
 
-func index(ctx *fiber.Ctx) error {
-	return ctx.Status(201).SendString("hello, world")
+type MyApp struct {
 }
 
-func greetMe(ctx *fiber.Ctx) error { // func(*Ctx) error
-	s := ctx.Query("name")
-	if s == "John" {
-		return ctx.Status(400).SendString("I do not like this name")
+func (a MyApp) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path == "/hello" {
+		w.Write([]byte("hello, world"))
+	} else if r.URL.Path == "/add" {
+		w.Write([]byte("1+1="))
 	} else {
-		return ctx.Status(200).SendString("hello, " + s)
+		w.Write([]byte("nothing to do!"))
 	}
-}
-
-func add(ctx *fiber.Ctx) error {
-	aStr := ctx.Query("a")
-	bStr := ctx.Query("b")
-
-	aInt, err := strconv.Atoi(aStr)
-	if err != nil {
-		return err
-	}
-	bInt, err := strconv.Atoi(bStr)
-	if err != nil {
-		return err
-	}
-
-	totalInt := aInt + bInt
-	totalStr := strconv.Itoa(totalInt)
-
-	return ctx.Status(200).SendString(totalStr)
 }
 
 func main() {
-	webApp := fiber.New()
-	webApp.Get("/", index)
-	webApp.Get("/greet-me", greetMe)
-	webApp.Get("/add", add)
-	webApp.Listen(":8080")
+	var myApp MyApp
+
+	http.ListenAndServe(":8000", myApp)
 }
