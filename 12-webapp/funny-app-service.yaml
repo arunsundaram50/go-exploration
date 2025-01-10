@@ -1,0 +1,9 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: funny-app-run-service
+spec:
+  template:
+    spec:
+      containers:
+      - image: gcr.io/business-insight-1605747528041/funny-app
