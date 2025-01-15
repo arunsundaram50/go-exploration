@@ -104,3 +104,11 @@ docker run -p 8080:8080 gcr.io/$PROJECT_ID/hello-world
 ```
 https://hello-world-363357136974.us-east1.run.app
 ```
+
+
+### 8. Delete it
+```
+gcloud run services list
+gcloud run services delete hello-world --region us-east1
+
+```
