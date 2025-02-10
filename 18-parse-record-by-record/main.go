@@ -33,7 +33,7 @@ func main() {
 	i := 0
 	for {
 		var sep Sep
-		err := csvDecoder.Decode(&sep) // ask decoder to decode the record
+		err := csvDecoder.Decode(&sep) // ask csv decoder to decode the record
 		if err != nil {
 			fileData.Close()
 			panic(err)
