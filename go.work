@@ -4,6 +4,11 @@ use (
 	./11-interfaces
 	./12-webapp
 	./13-webapp-curd
+	./14-weather-saas-user
+	./15-using-flags
+	./16-using-cobra
+	./17-reading-files
+	./18-efficient-etl
 	./9a-testing
 	./9b-func-first-class
 )

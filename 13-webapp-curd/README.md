@@ -14,3 +14,19 @@ go mod init MODULE_NAME
  go work use .
  ```
  
+ RestfulAPI
+ ==========
+ BROWSER, Another program ---HTTP--> SERVER (coded) 
+ Scenario #1 add numbers
+   Input: ctx.Fiber (query)
+   Output: error (string)
+ Scenario #2 resize
+   Input: ctx.Fiber (image file)
+   Output: error (image file)
+ Scenario #3 object recognition
+   Input: ctx.Fiber (image file)
+   Output: error (string)
+
+SAAS
+====
+Our Server (string, audio, video, image) ---HTTP/gRPC--> SAAS SERVER

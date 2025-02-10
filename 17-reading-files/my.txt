@@ -1,0 +1,2 @@
+John's age is 10
+Seth's age is 34

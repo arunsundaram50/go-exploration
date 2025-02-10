@@ -1,7 +1,7 @@
 package main
 
 import (
-	"webapp-curd/arithmetic"
+	b "webapp-curd/arithmetic/basic"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -13,7 +13,7 @@ func indexFunction(ctx *fiber.Ctx) error {
 func main() {
 	app := fiber.New()
 	app.Get("/", indexFunction)
-	app.Get("/add", arithmetic.AddFunction)
-	app.Get("/avg", arithmetic.AvgFunction)
+	app.Get("/add", b.AddFunction)
+	app.Get("/avg", b.AvgFunction)
 	app.Listen(":8080")
 }
