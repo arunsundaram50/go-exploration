@@ -1,4 +1,4 @@
-go 1.21.0
+go 1.23.5
 
 use (
 	./11-interfaces
@@ -8,7 +8,9 @@ use (
 	./15-using-flags
 	./16-using-cobra
 	./17-reading-files
-	./18-efficient-etl
+	./18-parse-record-by-record
+	./8-pointer
+	./8-pointer/3-large-object
 	./9a-testing
 	./9b-func-first-class
 )

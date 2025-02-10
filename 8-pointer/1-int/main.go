@@ -12,8 +12,7 @@ func g(a *int) { // takes an address where int is stored
 	*a = 100 // *a means write the value 100 at the address pointed to by a (100,000,000)
 }
 
-func main() {
-
+func main1() {
 	x := 10 // Say RAM location = 100,000,000
 	fmt.Printf("%d\n", x)
 

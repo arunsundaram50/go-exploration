@@ -16,7 +16,6 @@ type Person struct {
 
 func readCsv() {
 	var persons []Person
-
 	data, _ := os.ReadFile("my.csv")
 	csvutil.Unmarshal(data, &persons)
 	fmt.Println(persons)

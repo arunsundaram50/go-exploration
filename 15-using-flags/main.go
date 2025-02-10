@@ -6,9 +6,9 @@ import (
 )
 
 func main() {
-	person := flag.String("person", "", "Person name")
-	age := flag.Int("age", 0, "Person åge")
+	personAddress := flag.String("person", "", "Person name")
+	ageAddress := flag.Int("age", 0, "Person åge")
 	flag.Parse()
 
-	fmt.Printf("hello, %d year old %s\n", *age, *person)
+	fmt.Printf("hello, %d year old %s\n", *ageAddress, *personAddress)
 }
