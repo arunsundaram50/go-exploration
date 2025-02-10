@@ -27,13 +27,13 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	characterDecoder := csv.NewReader(fileData)           // fp => file characters
-	csvDecoder, _ := csvutil.NewDecoder(characterDecoder) // reader => csv record decode
+	characterDecoder := csv.NewReader(fileData)           // fp => file character decoder
+	csvDecoder, _ := csvutil.NewDecoder(characterDecoder) // characters => csv record decoder
 
 	i := 0
 	for {
 		var sep Sep
-		err := csvDecoder.Decode(&sep)
+		err := csvDecoder.Decode(&sep) // ask decoder to decode the record
 		if err != nil {
 			fileData.Close()
 			panic(err)
