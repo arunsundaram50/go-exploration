@@ -6,8 +6,10 @@ services:
       - "4566:4566"  # LocalStack main port
       - "4571:4571"  # Deprecated API Gateway
     environment:
-      - SERVICES=s3,lambda,ec2
+      - DATA_DIR=/var/lib/localstack/data  # Enables persistence
+      - SERVICES=events,s3,lambda,ec2
       - DEBUG=1
       - AWS_DEFAULT_REGION=us-east-1
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
+      - "/Users/arunsundaram/apps/go-exploration/c1-basic-services/localstack-data/s3:/tmp/localstack-s3-storage"
