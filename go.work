@@ -1,4 +1,4 @@
-go 1.23.5
+go 1.24.0
 
 use (
 	./11-interfaces
@@ -8,7 +8,7 @@ use (
 	./15-using-flags
 	./16-using-cobra
 	./17-reading-files
-	./18-parse-record-by-record
+	./18-parse-record-by-record/2-improved-error-handling
 	./8-pointer
 	./8-pointer/3-large-object
 	./9a-testing

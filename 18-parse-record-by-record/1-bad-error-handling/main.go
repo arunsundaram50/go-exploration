@@ -3,7 +3,9 @@ package main
 import (
 	"encoding/csv"
 	"fmt"
+	"io"
 	"os"
+	"strings"
 
 	"github.com/jszwec/csvutil"
 )
@@ -34,11 +36,25 @@ func main() {
 	for {
 		var sep Sep
 		err := csvDecoder.Decode(&sep) // ask csv decoder to decode the record
-		if err != nil {
-			fileData.Close()
-			panic(err)
+		if err == nil {
+			fmt.Println(i, sep)
+			i++
+			continue
 		}
-		fmt.Println(i, sep)
-		i++
+
+		if err == io.EOF {
+			break
+		}
+
+		if strings.HasPrefix(err.Error(), "csvutil: cannot unmarshal") {
+			continue
+		}
+
+		if strings.HasSuffix(err.Error(), "wrong number of fields") {
+			continue
+		}
+
+		fileData.Close()
+		panic(err)
 	}
 }
