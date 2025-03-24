@@ -1,8 +1,8 @@
 docker run --name my-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
-
+docker exec -it  my-postgres  bash
 
 ## Login to postgres
-sudo -u postgres psql
+psql -U postgres
 
 ## See users
 SELECT grantee, privilege_type, table_schema, table_name 

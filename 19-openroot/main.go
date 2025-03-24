@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-func f(relPath string) {
+func unsafeListDir(relPath string) {
 	entries, err := os.ReadDir("arun/" + relPath)
 	if err != nil {
 		log.Fatal(err)
@@ -18,7 +18,7 @@ func f(relPath string) {
 	}
 }
 
-func g(relPath string) {
+func safeListDir(relPath string) {
 	arunsRoot, err := os.OpenRoot("arun")
 	if err != nil {
 		log.Fatalf("error opening root for arun: %v", err)
@@ -32,17 +32,9 @@ func g(relPath string) {
 	for _, e := range entries {
 		fmt.Println(e.Name())
 	}
-
-	fp, err := arunsRoot.Create("globe.txt")
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	fp.WriteString("Hello globe")
-	fp.Close()
 }
 
 func main() {
 	dirToList := os.Args[1]
-	g(dirToList)
+	safeListDir(dirToList)
 }
