@@ -9,6 +9,7 @@ use (
 	./16-using-cobra
 	./17-reading-files
 	./18-parse-record-by-record/2-improved-error-handling
+	./21-goroutine
 	./8-pointer
 	./8-pointer/3-large-object
 	./9a-testing
