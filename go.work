@@ -14,5 +14,6 @@ use (
 	./8-pointer/3-large-object
 	./9a-testing
 	./9b-func-first-class
+	./a1-stock-periodicity
 	./c2-storage-access
 )
