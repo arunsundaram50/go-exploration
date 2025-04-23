@@ -10,10 +10,11 @@ use (
 	./17-reading-files
 	./18-parse-record-by-record/2-improved-error-handling
 	./21-goroutine
+	./22-channels
+	./23-channels
 	./8-pointer
 	./8-pointer/3-large-object
 	./9a-testing
 	./9b-func-first-class
-	./a1-stock-periodicity
 	./c2-storage-access
 )
